@@ -9,6 +9,14 @@ import path from "path";
 
 const router = express.Router();
 
+router.get("/", async (req, res) => {
+  try {
+    res.send("Welcome on board!");
+  } catch (error) {
+    handleError(error, req, res);
+  }
+});
+
 // Image processing route
 router.get("/process-image", async (req, res) => {
   try {
